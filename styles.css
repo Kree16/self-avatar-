@@ -1,0 +1,200 @@
+:root {
+    --primary: #8a63ff;
+    --secondary: #ff6b9d;
+    --bg: #faf5ff;
+    --text: #333;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background: var(--bg);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: var(--text);
+  }
+  
+  #app {
+    width: 95%;
+    max-width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  #header {
+    text-align: center;
+  }
+  
+  #header h1 {
+    color: var(--primary);
+    margin: 0;
+    font-size: 2.5rem;
+  }
+  
+  #header p {
+    color: var(--secondary);
+    margin: 5px 0 0;
+  }
+  
+  #chat-container {
+    display: flex;
+    gap: 20px;
+    height: 500px;
+  }
+  
+  #avatar-container {
+    flex: 1;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  #camera-feed {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 2px solid var(--primary);
+  }
+  
+  #chat-ui {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  #chat-messages {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .message {
+    max-width: 70%;
+    padding: 12px 18px;
+    border-radius: 18px;
+    animation: fadeIn 0.3s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .user-message {
+    background: var(--primary);
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+  }
+  
+  .ai-message {
+    background: #f0f0f0;
+    align-self: flex-start;
+    border-bottom-left-radius: 5px;
+  }
+  
+  #input-area {
+    display: flex;
+    padding: 15px;
+    border-top: 1px solid #eee;
+    gap: 10px;
+  }
+  
+  #user-input {
+    flex: 1;
+    padding: 12px 18px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    font-size: 16px;
+    transition: border 0.3s;
+  }
+  
+  #user-input:focus {
+    border-color: var(--primary);
+  }
+  
+  #controls {
+    display: flex;
+    gap: 10px;
+  }
+  
+  button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.2s, background 0.3s;
+  }
+  
+  button:hover {
+    background: #7a53ee;
+    transform: translateY(-2px);
+  }
+  
+  button:active {
+    transform: translateY(0);
+  }
+  
+  #voice-btn {
+    background: var(--secondary);
+  }
+  
+  #hug-btn {
+    background: #4caf50;
+  }
+  
+  #emotion-btn {
+    background: #ff9800;
+  }
+  
+  .typing-indicator {
+    display: flex;
+    gap: 5px;
+    padding: 12px 18px;
+    background: #f0f0f0;
+    border-radius: 18px;
+    align-self: flex-start;
+    width: fit-content;
+  }
+  
+  .typing-dot {
+    width: 8px;
+    height: 8px;
+    background: #999;
+    border-radius: 50%;
+    animation: typing 1.4s infinite ease-in-out;
+  }
+  
+  .typing-dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+  
+  .typing-dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes typing {
+    0%, 60%, 100% { transform: translateY(0); }
+    30% { transform: translateY(-5px); }
+  }
